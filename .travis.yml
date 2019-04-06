@@ -4,11 +4,15 @@ node_js:
 dist: trusty
 sudo: required
 
+git:
+  depth: 1
+
 branches:
   only:
     - master
 
 script:
+  - echo "Skipping script"
 
 deploy:
   - provider: script
