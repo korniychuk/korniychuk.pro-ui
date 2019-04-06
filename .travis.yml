@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "10"
+dist: trusty
+sudo: required
+
+branches:
+  only:
+    - master
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: bash config/ci/deploy.sh prod
+    on:
+      branch: master
