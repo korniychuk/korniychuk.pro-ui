@@ -8,6 +8,8 @@ branches:
   only:
     - master
 
+script:
+
 deploy:
   - provider: script
     skip_cleanup: true
