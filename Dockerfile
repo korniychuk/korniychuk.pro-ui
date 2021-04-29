@@ -9,5 +9,6 @@ RUN rm -rf /usr/share/nginx/html/* \
 
 
 COPY ./public_html/* /usr/share/nginx/html/
+RUN mkdir /usr/share/nginx/html/public
 
 CMD ["nginx", "-g", "daemon off;"]
