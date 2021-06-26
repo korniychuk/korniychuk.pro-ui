@@ -20,6 +20,9 @@
     }
 
     html {
+      --color-header: #18bc9c;
+      --color-main: #2c3e50;
+      --color-footer: #233140;
       font-size: 10px;
     }
 
@@ -30,11 +33,12 @@
     html, body {
       font-family: 'Roboto', sans-serif;
       font-weight: lighter;
+        letter-spacing: 1px;
     }
 
     header {
       height: 299px;
-      background-color: #18bc9c;
+      background-color: var(--color-header);
       text-align: center;
     }
 
@@ -53,7 +57,7 @@
       -webkit-border-radius: 50%;
       overflow: hidden;
       background-image: url('./avatar.jpg');
-      background-size: 120% 120%;
+      background-size: 100% 100%;
       background-position: center top;
     }
 
@@ -63,7 +67,7 @@
 
     main {
       min-height: calc(100vh - 299px);
-      background-color: #2c3e50;
+      background-color: var(--color-main);
       padding-top: 50px;
       padding-bottom: 100px;
       display: flex;
@@ -89,7 +93,7 @@
       width: 100%;
       padding: 25px 0;
 
-      background-color: #233140;
+      background-color: var(--color-footer);
       color: white;
     }
 
@@ -139,7 +143,7 @@
     .btn-outline:focus,
     .btn-outline:active,
     .btn-outline.active {
-      color: #18bc9c;
+      color: var(--color-header);
       background: white;
       border: solid 2px white;
     }
@@ -177,7 +181,7 @@
 
 <footer>
   <div class="copyright">
-    Copyright &copy; Anton Korniychuk 2012 - <span class="today-year">2019</span>
+    Copyright &copy; Anton Korniychuk 2012 - <span class="today-year">2021</span>
   </div>
 </footer>
 
