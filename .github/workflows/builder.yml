@@ -1,0 +1,23 @@
+name: Bilder CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the site container
+      run: bash config/ci/deploy.sh prod
+      env:
+        DOCKER_PRIVATE_REGISTRY: docker.korniychuk.pro
+        DEPLOY_TRIGGER_URL: https://www.korniychuk.pro/deploy
+        DOCKER_IMAGE: korniychuk-pro-ui
+        DOCKER_USERNAME: ${{secrecs.DOCKER_USERNAME}}
+        DOCKER_PASSWORD: ${{secrecs.DOCKER_PASSWORD}}
+        DEPLOY_BASEAUTH_USER: ${{secrecs.DEPLOY_BASEAUTH_USER}}
+        DEPLOY_BASEAUTH_PASSWORD: ${{secrecs.DEPLOY_BASEAUTH_PASSWORD}}
