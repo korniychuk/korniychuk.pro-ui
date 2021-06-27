@@ -3,14 +3,15 @@
 set -euxo pipefail
 
 declare -r SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
+declare -r GIT_BRANCH="$(git branch --show-current)"
 
 function calculateContainerTag() {
-  if [[ "${TRAVIS_BRANCH}" == "master" ]]; then
+  if [[ "${GIT_BRANCH}" == "master" ]]; then
       echo 'latest'
-  elif [[ "${TRAVIS_BRANCH}" == "develop" ]]; then
+  elif [[ "${GIT_BRANCH}" == "develop" ]]; then
       echo 'develop'
   else
-      echo "branch-${TRAVIS_BRANCH}"
+      echo "branch-${GIT_BRANCH}"
   fi
 }
 
